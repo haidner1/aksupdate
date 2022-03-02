@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: swetasgitaksupdate 
+  name: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}} 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: swetasgitaksupdate
+      app: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}}
   template:
     metadata:
       labels:
-        app: swetasgitaksupdate 
+        app: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}} 
     spec:
       containers:
-        - name: swetasgitaksupdate 
-          image: demoacr8112021.azurecr.io/swetasgitaksupdate
+        - name: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}} 
+          image: {{ containerRegistryConnection.Authorization.Parameters.loginServer }}/{{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}}
           ports:
-          - containerPort: 8080
+          - containerPort: {{ servicePort }}
