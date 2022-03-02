@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}}
+    name: haidneraksupdate
 spec:
     type: LoadBalancer
     ports:
-    - port: {{ servicePort }} 
+    - port: 8080 
     selector:
-        app: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}}
+        app: haidneraksupdate
