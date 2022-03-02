@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}} 
+  name: haidneraksupdate 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}}
+      app: haidneraksupdate
   template:
     metadata:
       labels:
-        app: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}} 
+        app: haidneraksupdate 
     spec:
       containers:
-        - name: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}} 
-          image: {{ containerRegistryConnection.Authorization.Parameters.loginServer }}/{{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}}
+        - name: haidneraksupdate 
+          image: mycontainerregistryhaidner.azurecr.io/haidneraksupdate
           ports:
-          - containerPort: {{ servicePort }}
+          - containerPort: 8080
