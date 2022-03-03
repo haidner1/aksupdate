@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-  res.send('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Error</title></head><body><pre>This is the API</pre></body></html>');
+  res.send('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<title>Error</title>\n</head>\n<body>\n<pre>\nThis is the API</pre>\n</body>\n</html>');
 });
 
 app.listen(PORT, HOST);
