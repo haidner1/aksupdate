@@ -12,7 +12,7 @@ app.set('view engine', 'pug');
 app.set('views', './views');
 
 app.get('/', function (req, res) {
-  res.render('index', { title: 'Hey', message: 'Hello there!'});
+  res.render('./index.pug', { title: 'Kubernetes', message: 'Kubernetes Demo'});
 });
 
 app.get('/api2', (req, res) => {
